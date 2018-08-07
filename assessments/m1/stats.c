@@ -70,29 +70,81 @@ void main() {
 
 void print_array(unsigned char *t, unsigned int size)
 { 
+int i;
+  printf("\nThe array now is-");
+    for(i=0;i<size;i++)
+	       printf("%d,",t[i]);
+      printf("\n");
 }
 
 int find_maximum(unsigned char *t,  unsigned int size)
-{
-}
-
+{ int i;
+	  int max;
+	    max= t[0];
+	      for(i=1; i<size;i++)
+		       {  if(max<=t[i])
+			             {max= t[i];
+					           pos1=i+1;}
+				      }
+	      return max;
+}   
+   
 int find_minimum(unsigned char *t, unsigned int size)
-{ 
-}
-
+{ int i;
+	  int min;
+	    min= t[0];
+	      for(i=0; i<size;i++)
+		       {  if(min>=t[i])
+			             {min= t[i]; pos2=i+1;}
+				      }
+	      return min;
+}   
+ 
 int find_mean(unsigned char *t,unsigned int size)
-{ 
-}
+{ int i,tot=0;
+	  int me=0;
+	    for(i=0; i<size;i++)
+		     {  tot+=t[i];
+			           
+			      }
+	      me=tot/size;
+	      return me;
+}   
 
 int find_median(unsigned char *T, unsigned int size)
-{
+{  int me,i,j,c;
+	  for(i=0;i<size-1;i++)
+		   { for(j=i+1;j<size;j++)
+			       { if(T[j]<T[i])
+				              { c=T[j];
+						      	 T[j]=T[i];
+							 	 T[i]=c;
+								        }
+					          }
+			        }
+	   me=(T[size/2]+T[size/2-1])/2;
+	   return me;
 }
 
 void sort_array(unsigned char *T, unsigned int size)
-{
+{ int i,j,c;
+	  for(i=0;i<size-1;i++)
+		   { for(j=i+1;j<size;j++)
+			       { if(T[j]>T[i])
+				              { c=T[j];
+						      	 T[j]=T[i];
+							 	 T[i]=c;
+								        }
+					          }
+			        }
+	  printf("\nNow,sorting the array in descending order...\n");
+	  print_array(T,size);
 }
-
+ 
 void print_statistics()
 {
+	  printf("\n The statistics of the array are as follows:");
+	    printf("\n Maximum:%d, position:%d\n Minimum:%d, position:%d\n Mean:%d\n Median:%d (Array sorted in ascending order to find median)\n",ma,pos1,mi,pos2,mea,med);
 }
+/* Add other Implementation File Code Here */
 
