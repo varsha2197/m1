@@ -144,7 +144,7 @@ void sort_array(unsigned char *T, unsigned int size)
 void print_statistics()
 {
 	  printf("\n The statistics of the array are as follows:");
-	    printf("\n Maximum:%d, position:%d\n Minimum:%d, position:%d\n Mean:%d\n Median:%d (Array sorted in ascending order to find median)\n",ma,pos1,mi,pos2,mea,med);
+	    printf("\n Maximum:%d, position in initial array:%d\n Minimum:%d, position in initial array:%d\n Mean:%d\n Median:%d (Array sorted in descending order to find median)\n",ma,pos1,mi,pos2,mea,med);
 }
 /* Add other Implementation File Code Here */
 
